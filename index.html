@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday</title>
+<title>Happy Birthday Ruchishya</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,80 +15,191 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:sans-serif;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-height:100vh;
+background:black;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+padding:60px 20px;
 display:flex;
 justify-content:center;
 align-items:center;
-background:black;
-overflow:hidden;
-color:white;
+flex-direction:column;
 text-align:center;
+position:relative;
 }
 
-video{
+.bg{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-object-fit:cover;
+background:
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+url('pic1.jpg');
+background-size:cover;
+background-position:center;
 z-index:-2;
+filter:blur(2px);
 }
 
 .overlay{
 position:fixed;
-top:0;
-left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.55);
+background:rgba(0,0,0,0.4);
 z-index:-1;
-}
-
-.content{
-padding:20px;
-animation:fade 2s ease;
 }
 
 h1{
 font-size:70px;
-color:#ff4fd8;
+line-height:90px;
+color:#ff71c8;
 text-shadow:
-0 0 10px #ff4fd8,
-0 0 20px #ff4fd8,
-0 0 40px #ff4fd8;
+0 0 10px #ff71c8,
+0 0 30px #ff71c8,
+0 0 60px #ff71c8;
+margin-bottom:25px;
+animation:glow 2s infinite alternate;
+}
+
+h2{
+font-size:45px;
 margin-bottom:20px;
+color:#ffd6f5;
 }
 
 p{
-font-size:28px;
-line-height:45px;
+font-size:24px;
+line-height:42px;
+max-width:900px;
+margin:auto;
 }
 
-button{
-margin-top:35px;
-padding:15px 35px;
+.card{
+width:95%;
+max-width:450px;
+margin:40px auto;
+padding:15px;
+border-radius:30px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px rgba(255,105,180,0.4);
+animation:fade 2s ease;
+}
+
+.card img{
+width:100%;
+border-radius:20px;
+}
+
+.caption{
+margin-top:15px;
 font-size:22px;
+line-height:35px;
+}
+
+.music-btn{
+position:fixed;
+top:20px;
+right:20px;
+padding:15px 25px;
 border:none;
 border-radius:50px;
-background:#ff4fd8;
+background:#ff4fc3;
 color:white;
-box-shadow:0 0 20px #ff4fd8;
+font-size:20px;
+box-shadow:0 0 20px #ff4fc3;
+z-index:1000;
+}
+
+.hearts span{
+position:fixed;
+bottom:-20px;
+color:pink;
+font-size:25px;
+animation:float 10s linear infinite;
+}
+
+.hearts span:nth-child(1){left:10%;}
+.hearts span:nth-child(2){left:30%; animation-delay:2s;}
+.hearts span:nth-child(3){left:50%; animation-delay:4s;}
+.hearts span:nth-child(4){left:70%; animation-delay:1s;}
+.hearts span:nth-child(5){left:90%; animation-delay:3s;}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:0;
+}
+50%{
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 10px #ff71c8;
+}
+to{
+text-shadow:
+0 0 20px #ff71c8,
+0 0 40px #ff71c8,
+0 0 80px #ff71c8;
+}
 }
 
 @keyframes fade{
 from{
 opacity:0;
-transform:scale(0.8);
+transform:translateY(50px);
 }
 to{
 opacity:1;
-transform:scale(1);
+transform:translateY(0);
 }
+}
+
+.final{
+font-size:60px;
+line-height:90px;
+color:#ff9ce5;
+text-shadow:0 0 30px #ff9ce5;
+}
+
+@media(max-width:768px){
+
+h1{
+font-size:50px;
+line-height:70px;
+}
+
+h2{
+font-size:35px;
+}
+
+p{
+font-size:21px;
+line-height:38px;
+}
+
+.final{
+font-size:42px;
+line-height:65px;
+}
+
 }
 
 </style>
@@ -93,24 +207,200 @@ transform:scale(1);
 
 <body>
 
-<video autoplay muted loop>
-<source src="https://cdn.coverr.co/videos/coverr-purple-sky-1560084265656?download=1080p" type="video/mp4">
-</video>
-
+<div class="bg"></div>
 <div class="overlay"></div>
 
-<div class="content">
+<div class="hearts">
+<span>💖</span>
+<span>✨</span>
+<span>💗</span>
+<span>🌸</span>
+<span>💕</span>
+</div>
 
-<h1>Happy Birthday 🎂</h1>
+<button class="music-btn" onclick="playMusic()">🎵 Music</button>
+
+<audio id="song" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<section>
+
+<h1>
+Happy Birthday<br>
+Ruchishya 🎂
+</h1>
 
 <p>
-Wishing You Endless Happiness ✨<br>
-May Your Smile Always Shine 💖
+Kuch dost sirf dost nahi hote...<br>
+wo life ka sabse khoobsurat part ban jaate he 💖<br><br>
+
+Aur sach bolu...<br>
+tu unme se ek he ✨
 </p>
 
-<button>🎵 Play Music</button>
+</section>
 
+<section>
+
+<h2>💌 For My Saheli</h2>
+
+<p>
+Ruchishya...<br><br>
+
+Har baar jab tere sath memories banti he na,<br>
+tab lagta he life thodi aur beautiful ho gayi ✨<br><br>
+
+Tu sirf bestie nahi,<br>
+meri comfort person he 💖
+</p>
+
+</section>
+
+<section>
+
+<div class="card">
+<img src="pic1.jpg">
+<div class="caption">
+Ye smile literally pura mood accha kar deti he 💕
 </div>
+</div>
+
+<div class="card">
+<img src="pic2.jpg">
+<div class="caption">
+Tere sath wali har selfie ek memory ban jaati he ✨
+</div>
+</div>
+
+</section>
+
+<section>
+
+<h2>🌸 Birthday Wish</h2>
+
+<p>
+Happy Birthday meri sabse khaas saheli 🎂<br><br>
+
+Allah kare teri har dua puri ho ✨<br>
+Teri smile kabhi kam na ho 💖<br><br>
+
+Aur honestly...<br>
+tere jaisi dost har kisi ko nahi milti 🌙
+</p>
+
+</section>
+
+<section>
+
+<div class="card">
+<img src="pic3.jpg">
+<div class="caption">
+Best moments are always incomplete without you 💗
+</div>
+</div>
+
+<div class="card">
+<img src="pic4.jpg">
+<div class="caption">
+Cute memories + crazy moments = hum 😭💖
+</div>
+</div>
+
+</section>
+
+<section>
+
+<h2>✨ Shayari</h2>
+
+<p>
+“Dosti wo nahi jo waqt ke sath badal jaaye...<br>
+Dosti to wo he jo har haal me sath nibhaye...” 💫<br><br>
+
+Ruchishya...<br>
+thank you for being that person 🌸
+</p>
+
+</section>
+
+<section>
+
+<div class="card">
+<img src="pic5.jpg">
+<div class="caption">
+Tere sath har random moment bhi special lagta he ✨
+</div>
+</div>
+
+<div class="card">
+<img src="pic6.jpg">
+<div class="caption">
+Saheli ho to tere jaisi 😭💖
+</div>
+</div>
+
+</section>
+
+<section>
+
+<h2>💖 Forever Besties</h2>
+
+<p>
+Har friendship itni pure nahi hoti...<br>
+but humari wali different he ✨<br><br>
+
+No matter kitna bhi time pass ho jaaye,<br>
+tu hamesha meri favourite insan rahegi 🌸
+</p>
+
+</section>
+
+<section>
+
+<div class="card">
+<img src="pic7.jpg">
+<div class="caption">
+Beautiful people. Beautiful memories 💕
+</div>
+</div>
+
+<div class="card">
+<img src="pic8.jpg">
+<div class="caption">
+And this bond deserves endless happiness ✨
+</div>
+</div>
+
+</section>
+
+<section>
+
+<div class="final">
+Happy Birthday<br>
+Ruchishya 💖<br><br>
+
+Stay Happy.<br>
+Stay Blessed.<br>
+Stay You ✨
+</div>
+
+</section>
+
+<script>
+
+const music = document.getElementById("song");
+
+function playMusic(){
+music.volume = 1.0;
+music.play();
+}
+
+window.onload = () => {
+music.volume = 1.0;
+music.play();
+}
+
+</script>
 
 </body>
 </html>
