@@ -1,6 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE html<!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,125 +14,188 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
 background:black;
-color:white;
 overflow-x:hidden;
+color:white;
 }
 
-section{
-min-height:100vh;
-padding:60px 20px;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-position:relative;
-}
-
-.bg{
+.lock-screen{
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
 background:
-linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.7)),
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
 url('pic1.jpg');
 background-size:cover;
 background-position:center;
-z-index:-2;
-filter:blur(2px);
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+padding:20px;
 }
 
-.overlay{
-position:fixed;
+.lock-box{
 width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
-z-index:-1;
-}
-
-h1{
-font-size:70px;
-line-height:90px;
-color:#ff71c8;
-text-shadow:
-0 0 10px #ff71c8,
-0 0 30px #ff71c8,
-0 0 60px #ff71c8;
-margin-bottom:25px;
-animation:glow 2s infinite alternate;
-}
-
-h2{
-font-size:45px;
-margin-bottom:20px;
-color:#ffd6f5;
-}
-
-p{
-font-size:24px;
-line-height:42px;
-max-width:900px;
-margin:auto;
-}
-
-.card{
-width:95%;
-max-width:450px;
-margin:40px auto;
-padding:15px;
+max-width:420px;
+padding:35px;
 border-radius:30px;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-box-shadow:0 0 30px rgba(255,105,180,0.4);
-animation:fade 2s ease;
+backdrop-filter:blur(12px);
+text-align:center;
+box-shadow:0 0 40px rgba(255,105,180,0.4);
+animation:fade 1.5s ease;
 }
 
-.card img{
-width:100%;
-border-radius:20px;
+.lock-box h1{
+font-size:45px;
+line-height:65px;
+color:#ff8bd6;
+margin-bottom:20px;
+text-shadow:0 0 20px #ff8bd6;
 }
 
-.caption{
-margin-top:15px;
-font-size:22px;
+.lock-box p{
+font-size:20px;
 line-height:35px;
+margin-bottom:25px;
 }
 
-.music-btn{
-position:fixed;
-top:20px;
-right:20px;
-padding:15px 25px;
+input{
+width:100%;
+padding:18px;
+border:none;
+border-radius:50px;
+outline:none;
+font-size:20px;
+text-align:center;
+background:rgba(255,255,255,0.15);
+color:white;
+margin-bottom:20px;
+}
+
+button{
+padding:16px 35px;
 border:none;
 border-radius:50px;
 background:#ff4fc3;
 color:white;
-font-size:20px;
+font-size:22px;
 box-shadow:0 0 20px #ff4fc3;
-z-index:1000;
+}
+
+.error{
+margin-top:15px;
+font-size:18px;
+color:#ff9adf;
+}
+
+.container{
+scroll-snap-type:y mandatory;
+overflow-y:scroll;
+height:100vh;
+display:none;
+}
+
+.slide{
+height:100vh;
+width:100%;
+scroll-snap-align:start;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:30px;
+text-align:center;
+position:relative;
+overflow:hidden;
+}
+
+.slide img{
+width:90%;
+max-width:420px;
+border-radius:30px;
+margin-bottom:25px;
+box-shadow:0 0 40px rgba(255,105,180,0.5);
+animation:zoom 6s infinite alternate;
+}
+
+.slide::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.45);
+z-index:-1;
+}
+
+.bg1{background:url('pic1.jpg') center/cover;}
+.bg2{background:url('pic2.jpg') center/cover;}
+.bg3{background:url('pic3.jpg') center/cover;}
+.bg4{background:url('pic4.jpg') center/cover;}
+.bg5{background:url('pic5.jpg') center/cover;}
+.bg6{background:url('pic6.jpg') center/cover;}
+.bg7{background:url('pic7.jpg') center/cover;}
+.bg8{background:url('pic8.jpg') center/cover;}
+
+.big{
+font-size:60px;
+line-height:80px;
+color:#ffd3f1;
+text-shadow:
+0 0 15px #ff6adf,
+0 0 40px #ff6adf;
+margin-bottom:20px;
+animation:fade 2s ease;
+}
+
+.text{
+font-size:25px;
+line-height:45px;
+max-width:850px;
+animation:fade 2s ease;
+}
+
+.small{
+margin-top:20px;
+font-size:22px;
+line-height:38px;
+color:#ffe7f8;
 }
 
 .hearts span{
-position:fixed;
+position:absolute;
 bottom:-20px;
-color:pink;
-font-size:25px;
+font-size:28px;
 animation:float 10s linear infinite;
 }
 
 .hearts span:nth-child(1){left:10%;}
-.hearts span:nth-child(2){left:30%; animation-delay:2s;}
-.hearts span:nth-child(3){left:50%; animation-delay:4s;}
-.hearts span:nth-child(4){left:70%; animation-delay:1s;}
-.hearts span:nth-child(5){left:90%; animation-delay:3s;}
+.hearts span:nth-child(2){left:30%;animation-delay:2s;}
+.hearts span:nth-child(3){left:50%;animation-delay:4s;}
+.hearts span:nth-child(4){left:70%;animation-delay:1s;}
+.hearts span:nth-child(5){left:90%;animation-delay:3s;}
+
+.music-note{
+position:fixed;
+top:20px;
+right:20px;
+padding:14px 25px;
+border-radius:50px;
+background:#ff4fc3;
+box-shadow:0 0 20px #ff4fc3;
+font-size:20px;
+z-index:1000;
+}
 
 @keyframes float{
 0%{
@@ -149,22 +211,10 @@ opacity:0;
 }
 }
 
-@keyframes glow{
-from{
-text-shadow:0 0 10px #ff71c8;
-}
-to{
-text-shadow:
-0 0 20px #ff71c8,
-0 0 40px #ff71c8,
-0 0 80px #ff71c8;
-}
-}
-
 @keyframes fade{
 from{
 opacity:0;
-transform:translateY(50px);
+transform:translateY(40px);
 }
 to{
 opacity:1;
@@ -172,32 +222,30 @@ transform:translateY(0);
 }
 }
 
-.final{
-font-size:60px;
-line-height:90px;
-color:#ff9ce5;
-text-shadow:0 0 30px #ff9ce5;
+@keyframes zoom{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.05);
+}
 }
 
 @media(max-width:768px){
 
-h1{
-font-size:50px;
-line-height:70px;
-}
-
-h2{
-font-size:35px;
-}
-
-p{
-font-size:21px;
-line-height:38px;
-}
-
-.final{
-font-size:42px;
+.big{
+font-size:46px;
 line-height:65px;
+}
+
+.text{
+font-size:22px;
+line-height:40px;
+}
+
+.small{
+font-size:20px;
+line-height:35px;
 }
 
 }
@@ -207,197 +255,186 @@ line-height:65px;
 
 <body>
 
-<div class="bg"></div>
-<div class="overlay"></div>
+<div class="lock-screen" id="lock">
+
+<div class="lock-box">
+
+<h1>
+🔒 Secret Birthday Website 💖
+</h1>
+
+<p>
+Only Ruchishya ki special people hi enter kar sakte he ✨
+</p>
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="unlock()">Unlock 💕</button>
+
+<div class="error" id="error"></div>
+
+</div>
+
+</div>
+
+<div class="music-note">
+🎵 Music Playing
+</div>
+
+<audio id="music" loop>
+<source src="music.mp3" type="audio/mp3">
+</audio>
+
+<div class="container" id="main">
+
+<div class="slide bg1">
 
 <div class="hearts">
 <span>💖</span>
 <span>✨</span>
-<span>💗</span>
-<span>🌸</span>
 <span>💕</span>
+<span>🌸</span>
+<span>💗</span>
 </div>
 
-<button class="music-btn" onclick="playMusic()">🎵 Music</button>
-
-<audio id="song" loop>
-<source src="music.mp3" type="audio/mp3">
-</audio>
-
-<section>
-
-<h1>
+<div class="big">
 Happy Birthday<br>
 Ruchishya 🎂
-</h1>
+</div>
 
-<p>
+<div class="text">
 Kuch dost sirf dost nahi hote...<br>
-wo life ka sabse khoobsurat part ban jaate he 💖<br><br>
+wo life ka sabse beautiful part ban jaate he 💖
+</div>
 
-Aur sach bolu...<br>
-tu unme se ek he ✨
-</p>
+</div>
 
-</section>
+<div class="slide bg2">
 
-<section>
+<img src="pic2.jpg">
 
-<h2>💌 For My Saheli</h2>
-
-<p>
+<div class="text">
 Ruchishya...<br><br>
 
-Har baar jab tere sath memories banti he na,<br>
-tab lagta he life thodi aur beautiful ho gayi ✨<br><br>
-
-Tu sirf bestie nahi,<br>
-meri comfort person he 💖
-</p>
-
-</section>
-
-<section>
-
-<div class="card">
-<img src="pic1.jpg">
-<div class="caption">
-Ye smile literally pura mood accha kar deti he 💕
-</div>
+Tere sath wali har memory literally comfort feel deti he ✨
 </div>
 
-<div class="card">
-<img src="pic2.jpg">
-<div class="caption">
-Tere sath wali har selfie ek memory ban jaati he ✨
-</div>
+<div class="small">
+Tu sirf bestie nahi...<br>
+bahut khaas dost he 💕
 </div>
 
-</section>
+</div>
 
-<section>
+<div class="slide bg3">
 
-<h2>🌸 Birthday Wish</h2>
-
-<p>
-Happy Birthday meri sabse khaas saheli 🎂<br><br>
-
-Allah kare teri har dua puri ho ✨<br>
-Teri smile kabhi kam na ho 💖<br><br>
-
-Aur honestly...<br>
-tere jaisi dost har kisi ko nahi milti 🌙
-</p>
-
-</section>
-
-<section>
-
-<div class="card">
 <img src="pic3.jpg">
-<div class="caption">
-Best moments are always incomplete without you 💗
-</div>
+
+<div class="text">
+Har random selfie,<br>
+har stupid moment,<br>
+har hasi...<br>
+sab yaad rehne wali memories ban gayi 🌸
 </div>
 
-<div class="card">
+</div>
+
+<div class="slide bg4">
+
 <img src="pic4.jpg">
-<div class="caption">
-Cute memories + crazy moments = hum 😭💖
+
+<div class="text">
+Bhagwan kare teri life me hamesha happiness rahe ✨<br><br>
+
+Aur teri smile kabhi kam na ho 💖
 </div>
+
 </div>
 
-</section>
+<div class="slide bg5">
 
-<section>
-
-<h2>✨ Shayari</h2>
-
-<p>
-“Dosti wo nahi jo waqt ke sath badal jaaye...<br>
-Dosti to wo he jo har haal me sath nibhaye...” 💫<br><br>
-
-Ruchishya...<br>
-thank you for being that person 🌸
-</p>
-
-</section>
-
-<section>
-
-<div class="card">
 <img src="pic5.jpg">
-<div class="caption">
-Tere sath har random moment bhi special lagta he ✨
-</div>
+
+<div class="text">
+Honestly bolu...?<br><br>
+
+Saheli ho to tere jaisi 😭💕
 </div>
 
-<div class="card">
+</div>
+
+<div class="slide bg6">
+
 <img src="pic6.jpg">
-<div class="caption">
-Saheli ho to tere jaisi 😭💖
+
+<div class="text">
+Kuch log life me aake bas special ban jaate he ✨<br><br>
+
+Aur tu unme se ek he 🌸
 </div>
+
 </div>
 
-</section>
+<div class="slide bg7">
 
-<section>
-
-<h2>💖 Forever Besties</h2>
-
-<p>
-Har friendship itni pure nahi hoti...<br>
-but humari wali different he ✨<br><br>
-
-No matter kitna bhi time pass ho jaaye,<br>
-tu hamesha meri favourite insan rahegi 🌸
-</p>
-
-</section>
-
-<section>
-
-<div class="card">
 <img src="pic7.jpg">
-<div class="caption">
-Beautiful people. Beautiful memories 💕
-</div>
+
+<div class="text">
+Beautiful memories.<br>
+Beautiful bond.<br>
+Beautiful people 💖
 </div>
 
-<div class="card">
+</div>
+
+<div class="slide bg8">
+
 <img src="pic8.jpg">
-<div class="caption">
-And this bond deserves endless happiness ✨
-</div>
-</div>
 
-</section>
-
-<section>
-
-<div class="final">
-Happy Birthday<br>
-Ruchishya 💖<br><br>
-
-Stay Happy.<br>
-Stay Blessed.<br>
-Stay You ✨
+<div class="big">
+Forever Besties 💕
 </div>
 
-</section>
+<div class="text">
+No matter kitna bhi time pass ho jaaye...<br>
+humari friendship hamesha special rahegi ✨
+</div>
+
+<div class="small">
+Happy Birthday once again Ruchishya 🎂💖
+</div>
+
+</div>
+
+</div>
 
 <script>
 
-const music = document.getElementById("song");
+function unlock(){
 
-function playMusic(){
+let pass = document.getElementById("password").value;
+
+if(pass === "May 18 2009"){
+
+document.getElementById("lock").style.display = "none";
+
+document.getElementById("main").style.display = "block";
+
+let music = document.getElementById("music");
+
 music.volume = 1.0;
+
 music.play();
+
 }
 
-window.onload = () => {
-music.volume = 1.0;
-music.play();
+else{
+
+document.getElementById("error").innerHTML =
+"Wrong password 😭<br>Hint: special date 💖";
+
+}
+
 }
 
 </script>
