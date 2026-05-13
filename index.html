@@ -6,7 +6,7 @@
 
 <title>Happy Birthday Ruchishya 💖</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,12 +14,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:black;
+background:#000;
 overflow:hidden;
+font-family:'Poppins',sans-serif;
 color:white;
 }
 
@@ -30,10 +30,7 @@ position:fixed;
 width:100%;
 height:100vh;
 background:
-linear-gradient(to bottom,
-#000000,
-#1a0014,
-#ff4fc344);
+linear-gradient(to bottom,#000000,#1a0014,#ff4fc355);
 display:flex;
 justify-content:center;
 align-items:center;
@@ -43,18 +40,17 @@ padding:20px;
 
 .lockBox{
 width:90%;
-max-width:360px;
+max-width:350px;
 padding:35px;
 border-radius:35px;
 background:rgba(255,255,255,0.08);
-backdrop-filter:blur(12px);
+backdrop-filter:blur(14px);
 text-align:center;
-box-shadow:0 0 35px #ff4fc388;
+box-shadow:0 0 40px #ff4fc388;
 }
 
-.lockTitle{
+.lockIcon{
 font-size:55px;
-color:#ffb8eb;
 margin-bottom:10px;
 }
 
@@ -90,8 +86,7 @@ box-shadow:0 0 25px #ff4fc3;
 
 #error{
 margin-top:15px;
-font-size:17px;
-color:#ffd6f5;
+color:#ffd8f5;
 }
 
 /* SLIDER */
@@ -104,25 +99,25 @@ scroll-behavior:smooth;
 }
 
 .slide{
-position:relative;
-width:100%;
 height:100vh;
 scroll-snap-align:start;
 display:flex;
 justify-content:center;
 align-items:center;
+position:relative;
 overflow:hidden;
 padding:25px;
 }
 
-/* BACKGROUND IMAGE */
+/* BACKGROUND */
 
 .bg{
 position:absolute;
 width:100%;
 height:100%;
 object-fit:cover;
-filter:brightness(0.42);
+filter:blur(10px) brightness(0.25);
+transform:scale(1.2);
 }
 
 /* OVERLAY */
@@ -131,74 +126,7 @@ filter:brightness(0.42);
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.25);
-}
-
-/* CONTENT */
-
-.content{
-position:relative;
-z-index:5;
-text-align:center;
-width:100%;
-}
-
-/* TITLE */
-
-.title{
-font-size:55px;
-line-height:1.25;
-font-weight:700;
-margin-bottom:28px;
-color:#ffd2f4;
-text-shadow:
-0 0 8px #ff4fc3,
-0 0 22px #ff4fc3;
-}
-
-/* HANDWRITING */
-
-.hand{
-font-family:'Dancing Script',cursive;
-font-size:65px;
-line-height:1.3;
-color:#ffd4f4;
-
-text-shadow:
-0 0 10px #ff4fc3,
-0 0 30px #ff4fc3;
-}
-
-/* TEXT */
-
-.text{
-font-size:27px;
-line-height:1.9;
-font-weight:500;
-background:rgba(0,0,0,0.28);
-padding:22px;
-border-radius:28px;
-backdrop-filter:blur(6px);
-}
-
-/* FINAL PAGE */
-
-.finalPage{
-background:
-linear-gradient(to bottom,
-#000000,
-#190013,
-#ff4fc344);
-}
-
-/* FROM */
-
-.from{
-margin-top:35px;
-font-size:28px;
-font-weight:600;
-color:#ffc9f0;
-text-shadow:0 0 18px #ff4fc3;
+background:rgba(0,0,0,0.2);
 }
 
 /* HEARTS */
@@ -210,39 +138,95 @@ animation:float 5s infinite ease-in-out;
 opacity:0.8;
 }
 
-.hearts span:nth-child(1){
-left:10%;
-top:20%;
-}
-
-.hearts span:nth-child(2){
-right:15%;
-top:18%;
-}
-
-.hearts span:nth-child(3){
-left:20%;
-bottom:22%;
-}
-
-.hearts span:nth-child(4){
-right:20%;
-bottom:15%;
-}
-
-.hearts span:nth-child(5){
-left:45%;
-top:10%;
-}
+.hearts span:nth-child(1){left:10%;top:20%;}
+.hearts span:nth-child(2){right:12%;top:18%;}
+.hearts span:nth-child(3){left:18%;bottom:20%;}
+.hearts span:nth-child(4){right:20%;bottom:18%;}
+.hearts span:nth-child(5){left:45%;top:10%;}
 
 @keyframes float{
-0%{
-transform:translateY(0px);
+0%{transform:translateY(0px);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0px);}
 }
-50%{
-transform:translateY(-15px);
+
+/* CARD */
+
+.card{
+position:relative;
+z-index:5;
+width:92%;
+max-width:380px;
+padding:18px;
+border-radius:35px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(14px);
+box-shadow:0 0 35px rgba(255,105,180,0.35);
+animation:fade 1.5s ease;
+text-align:center;
 }
-100%{
+
+.card img{
+width:100%;
+border-radius:25px;
+margin-bottom:22px;
+}
+
+/* TITLES */
+
+.hand{
+font-family:'Dancing Script',cursive;
+font-size:55px;
+line-height:1.2;
+color:#ffd4f4;
+margin-bottom:20px;
+
+text-shadow:
+0 0 10px #ff4fc3,
+0 0 30px #ff4fc3;
+}
+
+.title{
+font-size:36px;
+font-weight:600;
+margin-bottom:18px;
+color:#ffd4f1;
+text-shadow:0 0 15px #ff4fc3;
+}
+
+/* TEXT */
+
+.text{
+font-size:21px;
+line-height:1.8;
+font-weight:400;
+}
+
+/* FINAL PAGE */
+
+.finalPage{
+background:
+linear-gradient(to bottom,#000000,#1a0014,#ff4fc344);
+}
+
+/* FROM */
+
+.from{
+margin-top:25px;
+font-size:24px;
+color:#ffd3ef;
+text-shadow:0 0 15px #ff4fc3;
+}
+
+/* ANIMATION */
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
 transform:translateY(0px);
 }
 }
@@ -258,7 +242,7 @@ transform:translateY(0px);
 
 <div class="lockBox">
 
-<div class="lockTitle">💖</div>
+<div class="lockIcon">💖</div>
 
 <div class="lockText">
 Only Someone Special Can Unlock This Surprise ✨
@@ -293,31 +277,27 @@ Unlock 💕
 <div class="slide">
 
 <img src="pic1.jpg" class="bg">
-
 <div class="overlay"></div>
 
 <div class="hearts">
 <span>💖</span>
 <span>✨</span>
-<span>💕</span>
 <span>🌸</span>
+<span>💕</span>
 <span>💗</span>
 </div>
 
-<div class="content">
+<div class="card">
 
 <div class="hand">
 Happy Birthday<br>
 Ruchishya 🎂
 </div>
 
-<br>
-
 <div class="text">
 Aaj ka din sirf tera he ✨<br><br>
 
 Aur honestly...<br>
-
 tu meri life ki sabse pyari aur special saheli he 💖
 </div>
 
@@ -330,10 +310,11 @@ tu meri life ki sabse pyari aur special saheli he 💖
 <div class="slide">
 
 <img src="pic2.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic2.jpg">
 
 <div class="title">
 Forever Besties 💕
@@ -342,11 +323,7 @@ Forever Besties 💕
 <div class="text">
 Har friendship itni pure nahi hoti...<br><br>
 
-but humari wali different he ✨<br><br>
-
-No matter kitna bhi time pass ho jaaye,<br>
-
-tu hamesha meri favourite insan rahegi 🌸
+but humari wali different he ✨
 </div>
 
 </div>
@@ -358,10 +335,11 @@ tu hamesha meri favourite insan rahegi 🌸
 <div class="slide">
 
 <img src="pic3.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic3.jpg">
 
 <div class="title">
 My Safe Person 🌸
@@ -382,19 +360,18 @@ Saheli ho to tere jaisi 😭💖
 <div class="slide">
 
 <img src="pic4.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic4.jpg">
 
 <div class="title">
 Cute Memories ✨
 </div>
 
 <div class="text">
-Kuch log life me aake bas special ban jaate he 💕<br><br>
-
-Aur tu unme se ek he Ruchishya 🌸
+Kuch log life me aake bas special ban jaate he 💕
 </div>
 
 </div>
@@ -406,19 +383,20 @@ Aur tu unme se ek he Ruchishya 🌸
 <div class="slide">
 
 <img src="pic5.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic5.jpg">
 
 <div class="title">
-Shayari 💫
+Special Bond 💖
 </div>
 
 <div class="text">
-“Dosti wo nahi jo waqt ke sath badal jaaye...<br><br>
+Teri smile literally mood thik kar deti he ✨<br><br>
 
-Dosti to wo he jo har haal me sath nibhaye...” 💖
+Aur tere sath wali memories kabhi old nahi hoti 🌸
 </div>
 
 </div>
@@ -429,35 +407,12 @@ Dosti to wo he jo har haal me sath nibhaye...” 💖
 
 <div class="slide">
 
-<img src="pic6.jpg" class="bg">
-
-<div class="overlay"></div>
-
-<div class="content">
-
-<div class="title">
-Special Bond 🌸
-</div>
-
-<div class="text">
-Teri smile literally mood thik kar deti he ✨<br><br>
-
-Aur tere sath wali memories kabhi old nahi hoti 💖
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGE 7 -->
-
-<div class="slide">
-
 <img src="pic7.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic7.jpg">
 
 <div class="title">
 Bestie Squad 💕
@@ -473,27 +428,25 @@ par humari wali vibe alag he 😭✨
 
 </div>
 
-<!-- PAGE 8 -->
+<!-- PAGE 7 -->
 
 <div class="slide">
 
 <img src="pic8.jpg" class="bg">
-
 <div class="overlay"></div>
 
-<div class="content">
+<div class="card">
+
+<img src="pic8.jpg">
 
 <div class="title">
-Forever<br>
-Besties 💕
+Forever Besties 💕
 </div>
 
 <div class="text">
-No matter kitna bhi time<br>
-pass ho jaaye...<br><br>
+No matter kitna bhi time pass ho jaaye...<br><br>
 
-humari friendship<br>
-hamesha special rahegi ✨
+humari friendship hamesha special rahegi ✨
 </div>
 
 </div>
@@ -512,14 +465,12 @@ hamesha special rahegi ✨
 <span>💗</span>
 </div>
 
-<div class="content">
+<div class="card">
 
 <div class="hand">
 Happy Birthday<br>
 Ruchishya 🎂
 </div>
-
-<br><br>
 
 <div class="text">
 Bhagwan kare teri life<br>
